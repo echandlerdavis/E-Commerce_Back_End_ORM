@@ -27,11 +27,11 @@ E-Commerce Back End ORM is organized into the following files:
 **What the application looks like**
 
 Here is a video showing the use of the application
-[Link to Video of Application]
+[Link to Video of Application]https://watch.screencastify.com/v/n8x11lR0wjUYLJG0bdJ8
 
 **Link to deployed version of Chandler's Portfolio**
 
-GitHub Repository:
+GitHub Repository: https://github.com/echandlerdavis/E-Commerce_Back_End_ORM
 
 **Technologies Used** 
 * javascript
