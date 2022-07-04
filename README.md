@@ -10,21 +10,19 @@
 
 E-Commerce Back End ORM is organized into the following files:
 
-![Files](
+![Files](./assets/Files.png)
 
 **Installation**
 
-* install node.js
+* open integrated terminal from server.js
 * install necessary applications by using "npm i" in the command line
-* use node.js to answer the questions, as seen below
-* open team.html file to see newly created team profile
+* run mySQL and upload the schema.sql file 
+* exit mySQl and run the seeds/index.js to seed the database
 
 **Step by step on how to run the application**
 
-* Open an integrated termial from index.js
-* run node.js with this file
-* Answer the questions given your employees, add as many as you like
-* A new html file called team.html will be available to see
+* from the integrated terminal, start the server on the local host
+* use third party application to test different api routes to get/manipulate the data from the database
 
 **What the application looks like**
 
