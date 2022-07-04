@@ -5,18 +5,23 @@ const { Tag, Product, ProductTag } = require('../../models');
 
 router.get('/', async (req, res) => {
   try {
-    const tagData = await Tag.findAll();
+    const tagData = await Tag.findAll(
+      {include: [{
+        model:Product,
+        through:ProductTag
+      }]
+      }
+    );
     res.status(200).json(tagData);
   }catch(err){
     res.status(500).json(err);
   }
-
-  //include: [{model:Product, as: "product"}]
 }
   // find all tags
   // be sure to include its associated Product data
 );
 
+//get one tag
 router.get('/:id', async (req, res) => {
   try{
     const tagData = await Tag.findByPk(req.params.id, {
@@ -35,6 +40,7 @@ router.get('/:id', async (req, res) => {
   // be sure to include its associated Product data
 });
 
+//create new tag
 router.post('/', async (req, res) => {
   try {
     const tagData = await Tag.create(req.body);
@@ -42,11 +48,10 @@ router.post('/', async (req, res) => {
   } catch(err) {
     res.status(400).json(err);
   }
-  // create a new tag
 });
 
+//update tag
 router.put('/:id', async (req, res) => {
-  // update a tag's name by its `id` value
 try {
   const tagData = await Tag.update(req.body,
     {
@@ -57,11 +62,10 @@ try {
     res.status(200).json(tagData)
 } catch (err){
   res.status(500).json(err);
-}l
-  //look at exercise 10 in mvc week! hints baby! I feel like there's more to this.. but i'm not totally sure. just try it out
-
+}
 });
 
+//delete tag
 router.delete('/:id', async (req, res) => {
   try {
     const tagData = await Tag.destroy({
